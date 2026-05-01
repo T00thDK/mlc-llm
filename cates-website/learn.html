@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn / Wiki — How auctions actually work, at Cates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div data-chrome-head></div>
+
+<section class="section section--ink" style="padding-top: clamp(4rem, 7vw, 6rem)">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold-2)">Learn / Wiki</span>
+    <h1 style="max-width: 26ch; color:white; margin: .5rem 0 1rem">Everything you need to know to buy, sell, and bid with confidence.</h1>
+    <p class="lead" style="color: rgba(255,255,255,.85); max-width: 60ch">Plain-English explanations of every concept that matters in a real-estate or estate auction — and the traditional brokerage equivalents.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid; grid-template-columns: 240px 1fr; gap: 3rem;">
+    <aside>
+      <nav class="toc">
+        <h4>Topics</h4>
+        <ul>
+          <li><a href="#auction-101">Auction 101</a></li>
+          <li><a href="#proxy-bidding">Proxy bidding</a></li>
+          <li><a href="#max-bids">Max bids</a></li>
+          <li><a href="#soft-close">Soft close</a></li>
+          <li><a href="#absolute-vs-reserve">Absolute vs reserve</a></li>
+          <li><a href="#buyers-premium">Buyer's premium</a></li>
+          <li><a href="#proof-of-funds">Proof of funds</a></li>
+          <li><a href="#multi-tract">Multi-tract</a></li>
+          <li><a href="#bid-pressure">Bid pressure &amp; trade range</a></li>
+          <li><a href="#anti-snipe">Anti-snipe rules</a></li>
+          <li><a href="#tradition">Traditional listing</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div>
+      <h2 id="auction-101">Auction 101</h2>
+      <p class="lead">An auction is a sale method, not an asset class. The same lakefront home that sells traditionally for $2M with a six-month listing window can sell at auction in 38 days — sometimes for the same price, sometimes more, almost never less when the marketing is done well.</p>
+      <p>At Cates, we run <strong>online-only, time-definite</strong> auctions. "Online-only" means bidders bid from anywhere; "time-definite" means the auction has a published close, with a soft-close extension to prevent sniping. There is no auctioneer chant in real time on a typical online auction; the chant is replaced by the increment ladder and the live trade-pressure data we publish on the listing page.</p>
+
+      <h2 id="proxy-bidding">Proxy bidding</h2>
+      <p>You enter the most you would be willing to pay for the property. Our system, on your behalf, bids only the next required increment up to your ceiling — it never volunteers more than necessary. If two bidders both set max bids, the system arbitrates: the higher max wins at one increment above the second-highest max.</p>
+      <p><strong>Why it protects you:</strong> Your max is invisible to everyone — including Cates staff. You cannot be tricked into bidding more than you decided in advance.</p>
+
+      <h2 id="max-bids">Max bids in practice</h2>
+      <p>Imagine the current bid is $500K with $25K increments. You set a max of $625K. Another bidder bids $525K. The system bids $550K on your behalf. They bid $575K. The system bids $600K. They bid $625K. The system has reached your max and stops. They win at $625K — but they paid the very top of your range to do it.</p>
+      <p>Set a max early. You will sleep better and you will not regret a heat-of-the-moment number.</p>
+
+      <h2 id="soft-close">Soft close</h2>
+      <p>Any bid placed in the final five minutes of the auction extends the close by another five. The auction does not end until five clean minutes pass with no new bids. There is, by definition, no time when a snipe can win.</p>
+      <p>This is the single most important rule in modern online auctions, and we treat it as inviolable.</p>
+
+      <h2 id="absolute-vs-reserve">Absolute vs reserve</h2>
+      <p>An <strong>absolute</strong> auction sells to the highest bid, period. There is no minimum. This is the strongest commitment a seller can make and it produces, on average, the highest bidder participation.</p>
+      <p>A <strong>reserve</strong> auction has a published or unpublished minimum the seller will accept. If bidding does not meet the reserve, the property does not sell. Cates publishes reserves on the listing page where the seller permits it; we never run "phantom" reserves designed to mislead.</p>
+
+      <h2 id="buyers-premium">Buyer's premium</h2>
+      <p>A buyer's premium is added to the high bid to determine the total purchase price. Cates premiums range from 7% (Heritage Tier) to 10% (standard).</p>
+      <p>Example: a $1,250,000 high bid with a 10% premium yields a $1,375,000 total. The buyer's premium is what funds the auction marketing campaign — which is why most Cates auctions cost the seller no commission.</p>
+
+      <h2 id="proof-of-funds">Proof of funds</h2>
+      <p>Required before paddle activation on every auction. Acceptable forms: bank balance letter, recent wire receipt, mortgage pre-approval, or instant Plaid verification. Your information is reviewed by compliance only and is never visible to other bidders or auctioneer staff.</p>
+
+      <h2 id="multi-tract">Multi-tract auctions</h2>
+      <p>For larger land holdings we sell in tracts and combinations. Bidders may bid on a single tract, a combination of tracts, or the whole property. The system computes, in real time, which combination of bids produces the highest total — and the seller sells whichever combination wins.</p>
+      <p>This is mathematically a "winner determination" problem, and it is part of why we have invested heavily in our auction engine.</p>
+
+      <h2 id="bid-pressure">Bid pressure &amp; trade range</h2>
+      <p>Bid pressure is a number we compute every 1.2 seconds across every active lot. It blends bid frequency, bidder count, watcher count, time-to-close, and historical comp behavior into a single percentage. Above zero indicates bidding is accelerating; below zero indicates slowing.</p>
+      <p>Trade range is the projected interval in which we expect the lot to clear, computed from a deep-learner model trained on our historic catalog and five external valuation sources.</p>
+
+      <h2 id="anti-snipe">Anti-snipe rules</h2>
+      <p>Soft close (above) is our primary anti-snipe rule. We also throttle bids that arrive within 100ms of each other from the same identity, and we flag — but do not block — bids placed under conditions that historically correlate with collusion.</p>
+
+      <h2 id="tradition">Traditional listing — for completeness</h2>
+      <p>Cates also operates a fully-licensed traditional brokerage. A traditional listing is on the MLS, marketed broadly, and sold via offer + counter-offer + contract — typically with financing and inspection contingencies. The seller's timeline is the seller's choice; the price is whatever a buyer agrees to pay.</p>
+      <p>We will tell you, honestly, when a traditional listing is the right path for your asset and when an auction is. Our willingness to do that is part of why our reputation has held up for 84 years.</p>
+    </div>
+  </div>
+</section>
+
+<div data-chrome-foot></div>
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

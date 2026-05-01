@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in / Register · Cates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div data-chrome-head></div>
+
+<div class="auth-shell">
+  <div class="auth-side">
+    <div>
+      <span class="eyebrow" style="color:var(--gold-2)">Welcome to Cates</span>
+      <h2 style="margin: .5rem 0 1rem">Register once. Bid for a lifetime.</h2>
+      <p style="color:rgba(255,255,255,.85); max-width: 44ch">A single Cates account works across every auction event, every traditional listing, and every estate-services engagement. Your verification, payment methods, watchlist, and rewards are unified.</p>
+      <ul style="margin-top: 2rem">
+        <li><div class="ico">✓</div><div><strong style="color:white">Identity verified once.</strong><br>KYC across every auction — no re-registration.</div></li>
+        <li><div class="ico">✓</div><div><strong style="color:white">Proof of funds on file.</strong><br>Faster paddle activation on subsequent auctions.</div></li>
+        <li><div class="ico">✓</div><div><strong style="color:white">E-sign on any device.</strong><br>Sign T&amp;C, PSAs, and disclosures from your phone.</div></li>
+        <li><div class="ico">✓</div><div><strong style="color:white">Cates Credits accrue automatically.</strong><br>Reduced premiums and concierge perks at higher tiers.</div></li>
+      </ul>
+    </div>
+    <div style="font-size:.78rem; color:rgba(255,255,255,.5); margin-top: 2rem;">
+      Bank-grade encryption · SOC 2 Type II · ESIGN-Act compliant<br>
+      All consents stored as immutable signed receipts.
+    </div>
+  </div>
+
+  <div class="auth-form">
+    <form data-auth-steps onsubmit="event.preventDefault();">
+      <div class="step-bar">
+        <div class="step is-done"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+      </div>
+
+      <!-- Step 1 -->
+      <div data-step="1">
+        <h2 style="margin: 0 0 .5rem">Create your account</h2>
+        <p class="muted" style="margin-bottom: 1.5rem">Already have an account? <a href="#" style="color:var(--ink); text-decoration:underline">Sign in</a>.</p>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: .75rem">
+          <div class="field"><label>First name</label><input type="text" required></div>
+          <div class="field"><label>Last name</label><input type="text" required></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" required></div>
+        <div class="field"><label>Mobile (for outbid alerts)</label><input type="tel" required></div>
+        <div class="field"><label>Create password</label><input type="password" required minlength="10"><span class="helper">10+ characters, with at least one number and one symbol.</span></div>
+        <div class="cluster" style="justify-content:space-between; margin-top: .5rem">
+          <label style="display:flex; gap:.5rem; font-size:.85rem; align-items:flex-start"><input type="checkbox" required style="margin-top:3px"><span>I accept the <a href="#" style="text-decoration:underline">Terms of Use</a> and the <a href="#" style="text-decoration:underline">Privacy Policy</a>.</span></label>
+        </div>
+        <button class="btn btn--gold btn--lg btn--block" data-next type="button">Continue →</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div data-step="2" hidden>
+        <h2 style="margin: 0 0 .5rem">Verify your identity</h2>
+        <p class="muted" style="margin-bottom: 1.5rem">Required by federal anti-money-laundering law for any bidder transacting at our scale. Typically completes in under two minutes.</p>
+        <div class="field"><label>Date of birth</label><input type="date" required></div>
+        <div class="field"><label>Last 4 of SSN (or passport last 4)</label><input type="text" required></div>
+        <div class="field"><label>Mailing address</label><input type="text" required placeholder="Street, City, State, ZIP"></div>
+        <div class="field"><label>Government ID upload</label><input type="file"><span class="helper">Driver's license, passport, or state ID (front + back).</span></div>
+        <div class="cluster" style="justify-content:space-between; margin-top:.5rem">
+          <button class="btn btn--ghost" data-back type="button">← Back</button>
+          <button class="btn btn--gold" data-next type="button">Verify identity →</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div data-step="3" hidden>
+        <h2 style="margin: 0 0 .5rem">Proof of funds</h2>
+        <p class="muted" style="margin-bottom: 1.5rem">Choose one method. Your information is shared only with our compliance department and is never visible to other bidders or staff.</p>
+        <div style="display:grid; gap:.5rem; margin-bottom: 1rem">
+          <label style="display:flex; gap:.65rem; padding: 1rem; border:1px solid var(--line); border-radius:8px; cursor:pointer"><input type="radio" name="pof" checked><div><strong>Bank letter</strong><br><small class="muted">Verified balance from your bank — most common</small></div></label>
+          <label style="display:flex; gap:.65rem; padding: 1rem; border:1px solid var(--line); border-radius:8px; cursor:pointer"><input type="radio" name="pof"><div><strong>Wire receipt</strong><br><small class="muted">Recent wire confirmation showing available funds</small></div></label>
+          <label style="display:flex; gap:.65rem; padding: 1rem; border:1px solid var(--line); border-radius:8px; cursor:pointer"><input type="radio" name="pof"><div><strong>Mortgage pre-approval</strong><br><small class="muted">Pre-approval letter from your lender</small></div></label>
+          <label style="display:flex; gap:.65rem; padding: 1rem; border:1px solid var(--line); border-radius:8px; cursor:pointer"><input type="radio" name="pof"><div><strong>Plaid instant verification</strong><br><small class="muted">Connect your bank in 30 seconds — most secure</small></div></label>
+        </div>
+        <div class="field"><label>Upload (PDF or image)</label><input type="file"></div>
+        <div class="cluster" style="justify-content:space-between; margin-top:.5rem">
+          <button class="btn btn--ghost" data-back type="button">← Back</button>
+          <button class="btn btn--gold" data-next type="button">Submit proof →</button>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div data-step="4" hidden>
+        <h2 style="margin: 0 0 .5rem">Marketing &amp; communications</h2>
+        <p class="muted" style="margin-bottom: 1.5rem">You control how Cates can communicate with you. Every consent is recorded as an immutable signed receipt. You can change any of these at any time from your dashboard.</p>
+        <div style="display:flex; flex-direction:column; gap:.75rem; font-size:.95rem">
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" checked><span><strong>Auction alerts</strong><br><small class="muted">Live, upcoming, closing-soon</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" checked><span><strong>Outbid notifications</strong><br><small class="muted">SMS + push when you've been outbid</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" checked><span><strong>Personalized listings</strong><br><small class="muted">Properties matching your interests &amp; lifestyles</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox"><span><strong>Cross-channel personalization</strong><br><small class="muted">Coordinated marketing across email, web, social, OTT, OOH</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox"><span><strong>Clean-room enrichment</strong><br><small class="muted">Anonymized cohort matching with selected partners</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox"><span><strong>Direct mail</strong><br><small class="muted">Printed catalogs &amp; market briefings</small></span></label>
+        </div>
+        <div class="cluster" style="justify-content:space-between; margin-top: 1.25rem">
+          <button class="btn btn--ghost" data-back type="button">← Back</button>
+          <button class="btn btn--gold btn--lg" type="submit">Complete registration →</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div data-chrome-foot></div>
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
