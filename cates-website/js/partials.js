@@ -7,15 +7,14 @@ const CHROME_HEAD = `
 <div class="utility-bar">
   <div class="container">
     <div class="left">
-      <span class="pill"><span class="live-dot"></span> 4 LIVE AUCTIONS NOW</span>
-      <a href="warroom.html">War Room</a>
-      <a href="learn.html">How auctions work</a>
+      <span class="pill"><span class="live-dot"></span> LIVE</span>
+      <span class="activity-ticker" data-activity-bar></span>
     </div>
     <div class="right">
       <a href="tel:18005552837">1-800-555-CATES</a>
-      <a href="agents.html">Agents</a>
+      <a href="warroom.html">War Room</a>
+      <a href="learn.html">How auctions work</a>
       <a href="signin.html">Sign in</a>
-      <a href="signin.html#register">Register</a>
     </div>
   </div>
 </div>
@@ -62,12 +61,18 @@ const CHROME_HEAD = `
       <button class="icon-btn" aria-label="Search">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       </button>
+      <a href="dashboard.html#notifications" class="icon-btn" aria-label="Notifications">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        <span class="badge" data-notif-count>0</span>
+      </a>
       <a href="dashboard.html#watchlist" class="icon-btn" aria-label="Watchlist">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         <span class="badge" data-watch-count>0</span>
       </a>
-      <a href="dashboard.html" class="btn btn--ghost btn--sm">My Account</a>
-      <a href="signin.html#register" class="btn btn--gold btn--sm">Register to Bid</a>
+      <span data-auth-area class="cluster" style="gap:.5rem">
+        <a href="dashboard.html" class="btn btn--ghost btn--sm">My Account</a>
+        <a href="signin.html#register" class="btn btn--gold btn--sm">Register to Bid</a>
+      </span>
       <button class="icon-btn mobile-only" data-open-drawer aria-label="Menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>

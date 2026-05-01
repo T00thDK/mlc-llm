@@ -32,7 +32,7 @@
   </div>
 
   <div class="auth-form">
-    <form data-auth-steps onsubmit="event.preventDefault();">
+    <form data-auth-steps>
       <div class="step-bar">
         <div class="step is-done"></div>
         <div class="step"></div>
@@ -45,11 +45,11 @@
         <h2 style="margin: 0 0 .5rem">Create your account</h2>
         <p class="muted" style="margin-bottom: 1.5rem">Already have an account? <a href="#" style="color:var(--ink); text-decoration:underline">Sign in</a>.</p>
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap: .75rem">
-          <div class="field"><label>First name</label><input type="text" required></div>
-          <div class="field"><label>Last name</label><input type="text" required></div>
+          <div class="field"><label>First name</label><input type="text" name="first" required></div>
+          <div class="field"><label>Last name</label><input type="text" name="last" required></div>
         </div>
-        <div class="field"><label>Email</label><input type="email" required></div>
-        <div class="field"><label>Mobile (for outbid alerts)</label><input type="tel" required></div>
+        <div class="field"><label>Email</label><input type="email" name="email" required></div>
+        <div class="field"><label>Mobile (for outbid alerts)</label><input type="tel" name="phone" required></div>
         <div class="field"><label>Create password</label><input type="password" required minlength="10"><span class="helper">10+ characters, with at least one number and one symbol.</span></div>
         <div class="cluster" style="justify-content:space-between; margin-top: .5rem">
           <label style="display:flex; gap:.5rem; font-size:.85rem; align-items:flex-start"><input type="checkbox" required style="margin-top:3px"><span>I accept the <a href="#" style="text-decoration:underline">Terms of Use</a> and the <a href="#" style="text-decoration:underline">Privacy Policy</a>.</span></label>
@@ -93,12 +93,12 @@
         <h2 style="margin: 0 0 .5rem">Marketing &amp; communications</h2>
         <p class="muted" style="margin-bottom: 1.5rem">You control how Cates can communicate with you. Every consent is recorded as an immutable signed receipt. You can change any of these at any time from your dashboard.</p>
         <div style="display:flex; flex-direction:column; gap:.75rem; font-size:.95rem">
-          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" checked><span><strong>Auction alerts</strong><br><small class="muted">Live, upcoming, closing-soon</small></span></label>
-          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" checked><span><strong>Outbid notifications</strong><br><small class="muted">SMS + push when you've been outbid</small></span></label>
-          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" checked><span><strong>Personalized listings</strong><br><small class="muted">Properties matching your interests &amp; lifestyles</small></span></label>
-          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox"><span><strong>Cross-channel personalization</strong><br><small class="muted">Coordinated marketing across email, web, social, OTT, OOH</small></span></label>
-          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox"><span><strong>Clean-room enrichment</strong><br><small class="muted">Anonymized cohort matching with selected partners</small></span></label>
-          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox"><span><strong>Direct mail</strong><br><small class="muted">Printed catalogs &amp; market briefings</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" data-consent="auctionAlerts" checked><span><strong>Auction alerts</strong><br><small class="muted">Live, upcoming, closing-soon</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" data-consent="sms" checked><span><strong>Outbid notifications</strong><br><small class="muted">SMS + push when you've been outbid</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" data-consent="push" checked><span><strong>Personalized listings</strong><br><small class="muted">Properties matching your interests &amp; lifestyles</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" data-consent="personalization"><span><strong>Cross-channel personalization</strong><br><small class="muted">Coordinated marketing across email, web, social, OTT, OOH</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" data-consent="cleanRoom"><span><strong>Clean-room enrichment</strong><br><small class="muted">Anonymized cohort matching with selected partners</small></span></label>
+          <label style="display:flex; gap:.5rem; align-items:flex-start"><input type="checkbox" data-consent="mail"><span><strong>Direct mail</strong><br><small class="muted">Printed catalogs &amp; market briefings</small></span></label>
         </div>
         <div class="cluster" style="justify-content:space-between; margin-top: 1.25rem">
           <button class="btn btn--ghost" data-back type="button">← Back</button>
@@ -110,6 +110,8 @@
 </div>
 
 <div data-chrome-foot></div>
+<script src="js/cates-engine.js"></script>
+<script src="js/cates-render.js"></script>
 <script src="js/partials.js"></script>
 <script src="js/main.js"></script>
 </body>

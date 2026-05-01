@@ -19,29 +19,26 @@
       <div>
         <span class="eyebrow" style="color:var(--gold-2)">Auctioneer · Operator Console</span>
         <h1 style="margin:.35rem 0 .25rem; color:white">War Room</h1>
-        <div class="muted" style="color:rgba(255,255,255,.6); font-size:.92rem">Live cross-engine view of every bidder, paddle, asset, agent, and seller — in real time.</div>
+        <div class="muted" style="color:rgba(255,255,255,.6); font-size:.92rem">Live cross-engine view of every bidder, paddle, and lot — driven by the same engine bidders see.</div>
       </div>
       <div class="cluster">
-        <span class="tag tag--live"><span class="live-dot" style="background:white"></span> ON AIR · Whitfield Estate</span>
+        <span class="tag tag--live"><span class="live-dot" style="background:white"></span> ON AIR</span>
         <button class="btn btn--ghost-light btn--sm">📞 Phone bid</button>
         <button class="btn btn--ghost-light btn--sm">⚙️ Settings</button>
-        <button class="btn btn--gold btn--sm">📡 Broadcast to all bidders</button>
       </div>
     </div>
 
     <div class="war-grid">
-
-      <!-- Stage -->
-      <section class="war-stage">
+      <section class="war-stage" data-war-stage>
         <div class="stage-h">
           <div>
-            <div class="lot mono">LOT #1041 · 14 of 412</div>
-            <h2>Sunset Bluff — 5BR Lakefront Estate</h2>
-            <div class="muted" style="color:rgba(255,255,255,.6)">412 Sunset Bluff Rd · Watts Bar Lake, TN · Selling absolute</div>
+            <div class="lot mono" data-war-lot>LOT — · NOW</div>
+            <h2 data-war-title>—</h2>
+            <div class="muted" style="color:rgba(255,255,255,.6)" data-war-loc>—</div>
           </div>
           <div style="text-align:right">
             <div class="muted" style="color:rgba(255,255,255,.6); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase">Closes in</div>
-            <div class="clock-xl" data-end="2026-05-02T19:00:00" data-variant="compact">—</div>
+            <div class="clock-xl" data-war-end data-end="" data-variant="compact">—</div>
             <div class="muted" style="color:rgba(255,255,255,.6); font-size:.78rem">Soft close · 5min</div>
           </div>
         </div>
@@ -49,143 +46,42 @@
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; align-items:end">
           <div>
             <div class="muted" style="color:rgba(255,255,255,.6); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase">Current Bid</div>
-            <div class="now-bid" data-stage-bid>$1,205,000</div>
-            <div class="muted" style="color:rgba(255,255,255,.6)">Paddle <strong style="color:var(--gold-2)">317</strong> — Holloway, R · Online · 7:42:18 PM CT</div>
+            <div class="now-bid" data-war-bid>$0</div>
+            <div class="muted" style="color:rgba(255,255,255,.6)" data-war-leader>—</div>
           </div>
           <div>
             <div class="muted" style="color:rgba(255,255,255,.6); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase">Next Required</div>
-            <div class="now-bid" data-stage-next style="color:var(--gold-2); font-size: 2.2rem">$1,230,000</div>
-            <div class="muted" style="color:rgba(255,255,255,.6)">Increment: $25,000 · Cates AVM: $1.265M</div>
+            <div class="now-bid" data-war-next style="color:var(--gold-2); font-size: 2.2rem">$0</div>
           </div>
         </div>
 
-        <!-- Auctioneer "asking" controls -->
         <div class="ask">
-          <button>$1,215K — fair warning?</button>
-          <button>$1,230K — once</button>
-          <button>$1,245K — twice</button>
-          <button class="fair">FAIR WARNING</button>
-          <button class="hammer">SOLD! ⚒</button>
-          <button>+ Custom ask</button>
-          <button>Pause / Resume</button>
+          <button data-war-ask="ask">$1,215K — fair warning?</button>
+          <button data-war-ask="once">Once</button>
+          <button data-war-ask="twice">Twice</button>
+          <button class="fair" data-war-ask="fair">FAIR WARNING</button>
+          <button class="hammer" data-war-ask="hammer">SOLD! ⚒</button>
+          <button data-war-ask="pause">Pause</button>
         </div>
 
-        <!-- Live bid feed -->
         <div>
-          <div class="between mb-2" style="margin-bottom:.5rem">
-            <h3 style="margin:0">Live bid feed</h3>
-            <span class="muted" style="font-size:.78rem">Real-time across web · iOS · Android · phone · floor</span>
-          </div>
-          <div class="bid-feed" data-war-feed>
-            <div class="bid-row">
-              <span class="pad">317</span>
-              <span class="who">R. Holloway</span>
-              <span class="amt">$1,205,000</span>
-              <span class="at">7:42:18 PM</span>
-            </div>
-            <div class="bid-row">
-              <span class="pad">204</span>
-              <span class="who">K. Trenton</span>
-              <span class="amt">$1,195,000</span>
-              <span class="at">7:41:53 PM</span>
-            </div>
-            <div class="bid-row">
-              <span class="pad">427</span>
-              <span class="who">E. Whitford</span>
-              <span class="amt">$1,180,000</span>
-              <span class="at">7:41:31 PM</span>
-            </div>
-            <div class="bid-row">
-              <span class="pad">112</span>
-              <span class="who">B. Marshall</span>
-              <span class="amt">$1,160,000</span>
-              <span class="at">7:39:04 PM</span>
-            </div>
-            <div class="bid-row">
-              <span class="pad">PHN</span>
-              <span class="who">Phone bid · Agent: Cates III</span>
-              <span class="amt">$1,145,000</span>
-              <span class="at">7:36:22 PM</span>
-            </div>
-            <div class="bid-row">
-              <span class="pad">622</span>
-              <span class="who">M. O'Connor</span>
-              <span class="amt">$1,120,000</span>
-              <span class="at">7:31:18 PM</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bid pressure / projections -->
-        <div>
-          <div class="between mb-2" style="margin-bottom:.5rem">
-            <h3 style="margin:0">Bid pressure &amp; trade range</h3>
-            <span class="muted" style="font-size:.78rem">Updated every 1.2s · 94% confidence</span>
-          </div>
-          <svg class="spark" data-values="980,1010,1015,1040,1060,1075,1085,1090,1105,1120,1145,1160,1175,1195,1205" style="height:80px"></svg>
-          <div class="pressure" style="background: rgba(255,255,255,.04); margin-top:.5rem">
-            <div class="seg"><span class="k" style="color:rgba(255,255,255,.6)">Pressure</span><span class="v" style="color:var(--gold-2)">+38%</span></div>
-            <div class="seg"><span class="k" style="color:rgba(255,255,255,.6)">Median</span><span class="v" style="color:white">$1.18M</span></div>
-            <div class="seg"><span class="k" style="color:rgba(255,255,255,.6)">Projection</span><span class="v" style="color:white">$1.34M</span></div>
-            <div class="seg"><span class="k" style="color:rgba(255,255,255,.6)">Outliers</span><span class="v" style="color:white">2</span></div>
-            <div class="seg"><span class="k" style="color:rgba(255,255,255,.6)">Cates AVM</span><span class="v" style="color:white">$1.265M</span></div>
-          </div>
+          <div class="between mb-2" style="margin-bottom:.5rem"><h3 style="margin:0">Live bid feed</h3><span class="muted" style="font-size:.78rem">Real-time across web · iOS · Android · phone</span></div>
+          <div class="bid-feed" data-war-feed></div>
         </div>
       </section>
 
-      <!-- Bidders -->
       <section class="war-card">
-        <div class="head">
-          <h3>Active bidders · 7</h3>
-          <span class="live-tag"><span class="dot"></span> LIVE</span>
-        </div>
-        <div class="muted" style="font-size:.78rem; color:rgba(255,255,255,.55)">Identities and paddle numbers visible only to staff. Bidders see only their own paddle.</div>
-        <ul class="bidder-list">
-          <li class="is-leader is-online">
-            <span class="pad">317</span>
-            <div><span class="nm">R. Holloway</span><div class="meta">Estate tier · 9 lifetime · Knoxville</div></div>
-            <span class="max">max $1.42M</span>
-          </li>
-          <li class="is-online">
-            <span class="pad">204</span>
-            <div><span class="nm">K. Trenton</span><div class="meta">Heritage tier · 28 lifetime · Atlanta</div></div>
-            <span class="max">max $1.38M</span>
-          </li>
-          <li class="is-online">
-            <span class="pad">427</span>
-            <div><span class="nm">E. Whitford</span><div class="meta">Estate tier · 11 lifetime · Nashville</div></div>
-            <span class="max">max $1.40M</span>
-          </li>
-          <li class="is-online">
-            <span class="pad">112</span>
-            <div><span class="nm">B. Marshall</span><div class="meta">New bidder · verified · Birmingham</div></div>
-            <span class="max">max —</span>
-          </li>
-          <li>
-            <span class="pad">622</span>
-            <div><span class="nm">M. O'Connor</span><div class="meta">Heritage tier · 41 lifetime · Memphis</div></div>
-            <span class="max">max $1.50M</span>
-          </li>
-          <li class="is-online">
-            <span class="pad">739</span>
-            <div><span class="nm">J. Vance</span><div class="meta">Estate tier · 6 lifetime · Lexington</div></div>
-            <span class="max">max $1.30M</span>
-          </li>
-          <li>
-            <span class="pad">PHN</span>
-            <div><span class="nm">Phone bid (proxy: Cates III)</span><div class="meta">Confidential · max held offline</div></div>
-            <span class="max">private</span>
-          </li>
-        </ul>
+        <div class="head"><h3>Active bidders</h3><span class="live-tag"><span class="dot"></span> LIVE</span></div>
+        <div class="muted" style="font-size:.78rem; color:rgba(255,255,255,.55)">Identities visible to staff only. Bidders see only their own paddle.</div>
+        <ul class="bidder-list" data-war-bidders></ul>
         <div class="cluster" style="margin-top:auto">
           <button class="btn btn--ghost-light btn--sm" style="flex:1">Message</button>
           <button class="btn btn--ghost-light btn--sm" style="flex:1">Suspend</button>
         </div>
       </section>
 
-      <!-- Right column: agent + seller + alerts + comm -->
       <section class="war-card">
-        <div class="head"><h3>Listing team</h3></div>
+        <div class="head"><h3>Listing team &amp; broadcast</h3></div>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.65rem">
           <li style="display:flex; gap:.6rem; align-items:center">
             <div style="width:36px; height:36px; border-radius:50%; background: linear-gradient(135deg,var(--gold-2),var(--burgundy)); color:white; display:grid; place-items:center; font-weight:600; font-size:.85rem">CC</div>
@@ -193,7 +89,7 @@
             <button class="btn btn--ghost-light btn--sm">📞</button>
           </li>
           <li style="display:flex; gap:.6rem; align-items:center">
-            <div style="width:36px; height:36px; border-radius:50%; background: linear-gradient(135deg,var(--teal),#3b9b94); color:white; display:grid; place-items:center; font-weight:600; font-size:.85rem">JC</div>
+            <div style="width:36px; height:36px; border-radius:50%; background: linear-gradient(135deg,var(--teal),#4cb1aa); color:white; display:grid; place-items:center; font-weight:600; font-size:.85rem">JC</div>
             <div style="flex:1"><div style="color:white; font-size:.9rem; font-weight:600">Jordan Cates</div><div class="muted" style="color:rgba(255,255,255,.55); font-size:.75rem">CRO · ring man</div></div>
             <button class="btn btn--ghost-light btn--sm">📞</button>
           </li>
@@ -205,68 +101,18 @@
         </ul>
 
         <div style="border-top:1px solid rgba(255,255,255,.08); padding-top:1rem">
-          <div class="head"><h3>Seller</h3></div>
-          <div style="display:flex; gap:.6rem; align-items:center">
-            <div style="width:36px; height:36px; border-radius:50%; background:#5b3a3a; color:white; display:grid; place-items:center; font-weight:600; font-size:.85rem">WC</div>
-            <div style="flex:1"><div style="color:white; font-size:.9rem; font-weight:600">Whitfield Trust</div><div class="muted" style="color:rgba(255,255,255,.55); font-size:.75rem">Watching · approved absolute</div></div>
-            <span class="tag tag--featured">Approved</span>
-          </div>
-        </div>
-
-        <div style="border-top:1px solid rgba(255,255,255,.08); padding-top:1rem">
-          <div class="head"><h3>Alerts</h3><span class="muted" style="font-size:.72rem">last 5 min</span></div>
-          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; font-size:.85rem">
-            <li style="padding:8px 10px; border-left:3px solid var(--gold-2); background: rgba(212,162,74,.08); border-radius:0 4px 4px 0; color:white">Paddle 317 placed +$45K leap bid — anomaly score 0.82</li>
-            <li style="padding:8px 10px; border-left:3px solid var(--success); background: rgba(47,122,85,.08); border-radius:0 4px 4px 0; color:white">Latency green — 87ms p95 across 6 regions</li>
-            <li style="padding:8px 10px; border-left:3px solid var(--burgundy); background: rgba(166,58,58,.08); border-radius:0 4px 4px 0; color:white">Phone bidder requesting 30s clarity — clerk responded</li>
-            <li style="padding:8px 10px; border-left:3px solid var(--line-2); border-radius:0 4px 4px 0; color:white">2 new watchers from paid social campaign in last min</li>
-          </ul>
-        </div>
-
-        <div style="border-top:1px solid rgba(255,255,255,.08); padding-top:1rem">
-          <h3 style="margin-bottom:.5rem">Broadcast to bidders</h3>
-          <textarea placeholder="Type a message to all online bidders…" rows="2" style="width:100%; background:rgba(255,255,255,.05); color:white; border:1px solid rgba(255,255,255,.12); border-radius:6px; padding:8px; font-family:inherit; font-size:.85rem"></textarea>
-          <div class="cluster" style="margin-top:.5rem">
-            <button class="btn btn--ghost-light btn--sm">Save template</button>
-            <button class="btn btn--gold btn--sm" style="margin-left:auto">Send</button>
+          <h3 style="margin-bottom:.5rem">Broadcast to all bidders</h3>
+          <textarea data-war-msg placeholder="Type a message to all online bidders…" rows="2" style="width:100%; background:rgba(255,255,255,.05); color:white; border:1px solid rgba(255,255,255,.12); border-radius:6px; padding:8px; font-family:inherit; font-size:.85rem"></textarea>
+          <div class="cluster" style="margin-top:.5rem; justify-content:space-between">
+            <span class="muted" style="font-size:.72rem; color:rgba(255,255,255,.55)">Delivers as a notification to every active bidder.</span>
+            <button class="btn btn--gold btn--sm" data-war-send>Send</button>
           </div>
         </div>
       </section>
 
-      <!-- Bottom row: lot queue, infrastructure, audience -->
       <section class="war-card" style="grid-column: 2 / -1">
-        <div class="head"><h3>Lot queue · 14 of 412</h3><a href="#" class="muted" style="font-size:.78rem; color:rgba(255,255,255,.6)">Reorder</a></div>
-        <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap:.5rem; max-height: 220px; overflow-y:auto">
-          <div style="padding:.6rem; border-radius:6px; border:1px solid var(--gold); background: rgba(180,135,57,.12)">
-            <div class="mono" style="color:var(--gold-2); font-size:.72rem">NOW · LOT #1041</div>
-            <div style="color:white; font-weight:600">Sunset Bluff</div>
-            <div class="muted" style="color:rgba(255,255,255,.55); font-size:.78rem">Lakefront · TN</div>
-          </div>
-          <div style="padding:.6rem; border-radius:6px; border:1px solid rgba(255,255,255,.08)">
-            <div class="mono" style="color:rgba(255,255,255,.55); font-size:.72rem">NEXT · LOT #1042</div>
-            <div style="color:white">1957 Mercedes 300SL</div>
-            <div class="muted" style="color:rgba(255,255,255,.55); font-size:.78rem">Roadster · Pemberton</div>
-          </div>
-          <div style="padding:.6rem; border-radius:6px; border:1px solid rgba(255,255,255,.08)">
-            <div class="mono" style="color:rgba(255,255,255,.55); font-size:.72rem">LOT #1043</div>
-            <div style="color:white">Walnut Ridge — Tract 1</div>
-            <div class="muted" style="color:rgba(255,255,255,.55); font-size:.78rem">120 ac tillable</div>
-          </div>
-          <div style="padding:.6rem; border-radius:6px; border:1px solid rgba(255,255,255,.08)">
-            <div class="mono" style="color:rgba(255,255,255,.55); font-size:.72rem">LOT #1044</div>
-            <div style="color:white">Walnut Ridge — Tract 2</div>
-            <div class="muted" style="color:rgba(255,255,255,.55); font-size:.78rem">160 ac · creek</div>
-          </div>
-          <div style="padding:.6rem; border-radius:6px; border:1px solid rgba(255,255,255,.08)">
-            <div class="mono" style="color:rgba(255,255,255,.55); font-size:.72rem">LOT #1045</div>
-            <div style="color:white">Walnut Ridge — All</div>
-            <div class="muted" style="color:rgba(255,255,255,.55); font-size:.78rem">Combination bid</div>
-          </div>
-          <div style="padding:.6rem; border-radius:6px; border:1px solid rgba(255,255,255,.08)">
-            <div class="mono" style="color:rgba(255,255,255,.55); font-size:.72rem">LOT #1046</div>
-            <div style="color:white">Whitfield Cellar — 14 vintages</div>
-          </div>
-        </div>
+        <div class="head"><h3>Lot queue</h3><a href="#" class="muted" style="font-size:.78rem; color:rgba(255,255,255,.6)">Reorder</a></div>
+        <div data-war-queue style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap:.5rem; max-height: 220px; overflow-y:auto"></div>
       </section>
 
       <section class="war-card">
@@ -274,7 +120,7 @@
         <div class="kpi-grid" style="grid-template-columns:1fr 1fr; gap:.65rem">
           <div class="kpi" style="background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.08)"><span class="k" style="color:rgba(255,255,255,.6)">Online now</span><span class="v" style="color:white">2,847</span></div>
           <div class="kpi" style="background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.08)"><span class="k" style="color:rgba(255,255,255,.6)">Verified</span><span class="v" style="color:var(--gold-2)">312</span></div>
-          <div class="kpi" style="background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.08)"><span class="k" style="color:rgba(255,255,255,.6)">Cohort</span><span class="v" style="color:white">88% lookalike</span></div>
+          <div class="kpi" style="background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.08)"><span class="k" style="color:rgba(255,255,255,.6)">Cohort</span><span class="v" style="color:white">88% LAA</span></div>
           <div class="kpi" style="background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.08)"><span class="k" style="color:rgba(255,255,255,.6)">Avg Income</span><span class="v" style="color:white">$840K</span></div>
         </div>
         <h4 style="font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-top:.5rem">Top sources</h4>
@@ -286,12 +132,13 @@
           <li style="display:flex; justify-content:space-between; padding:4px 0">Direct · <span class="mono" style="color:var(--gold-2)">9%</span></li>
         </ul>
       </section>
-
     </div>
   </div>
 </div>
 
 <div data-chrome-foot></div>
+<script src="js/cates-engine.js"></script>
+<script src="js/cates-render.js"></script>
 <script src="js/partials.js"></script>
 <script src="js/main.js"></script>
 </body>
