@@ -321,3 +321,4 @@ gallery/how_to/work_with_microtvm/micro_tvmc.py
 
 3rdparty
 dist
+.claude/
