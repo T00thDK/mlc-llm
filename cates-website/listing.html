@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lot detail · Cates Auctions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div data-chrome-head></div>
+
+<!-- Breadcrumb -->
+<div style="background: var(--surface); border-bottom: 1px solid var(--line);">
+  <div class="container" style="padding-block:14px; display:flex; gap:.65rem; align-items:center; font-size:.85rem; color:var(--text-mute); flex-wrap:wrap;">
+    <a href="index.html">Home</a> <span>›</span>
+    <a href="auctions.html">Auctions &amp; Listings</a> <span>›</span>
+    <span style="color:var(--ink)" data-l-title>—</span>
+    <span class="right" style="display:flex; gap:.5rem; align-items:center;">
+      <button class="btn btn--sm btn--ghost"><span>📤</span> Share</button>
+      <button class="btn btn--sm btn--ghost"><span>🖨️</span> Brochure</button>
+      <button class="btn btn--sm btn--ghost"><span>📅</span> Add to calendar</button>
+    </span>
+  </div>
+</div>
+
+<section class="section section--tight" data-listing-root>
+  <div class="container">
+    <div class="between mb-3" style="align-items:flex-end; flex-wrap:wrap; gap:1rem">
+      <div>
+        <div class="cluster" data-l-status></div>
+        <h1 style="margin:.65rem 0 .5rem" data-l-title>—</h1>
+        <div style="color:var(--text-soft)" data-l-loc>—</div>
+      </div>
+      <div class="cluster">
+        <button class="btn btn--ghost">📐 Floorplan</button>
+        <button class="btn btn--ghost">🛰️ 3D Tour</button>
+        <button class="btn btn--ghost">🎥 Video</button>
+      </div>
+    </div>
+
+    <div class="gallery mb-4" data-l-gallery></div>
+
+    <div class="detail-grid">
+      <div>
+
+        <div class="panel">
+          <div class="between">
+            <h3 style="margin:0">About this lot</h3>
+            <span class="muted" style="font-size:.85rem">Listed by <strong style="color:var(--ink)">Cates Real Estate &amp; Auction</strong></span>
+          </div>
+          <p style="font-size: 1.05rem; color: var(--text-soft);" data-l-description></p>
+
+          <div class="pressure mb-3" data-l-pressure></div>
+
+          <h4 style="font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-mute); margin-bottom:.5rem">Live trade range</h4>
+          <svg class="spark" data-l-spark style="height:60px;width:100%"></svg>
+        </div>
+
+        <div class="panel" data-tabs>
+          <div class="tabs" role="tablist">
+            <button role="tab" aria-selected="true" aria-controls="tab-overview" id="t-overview">Overview</button>
+            <button role="tab" aria-selected="false" aria-controls="tab-specs" id="t-specs">Specs</button>
+            <button role="tab" aria-selected="false" aria-controls="tab-diligence" id="t-diligence">Due Diligence</button>
+            <button role="tab" aria-selected="false" aria-controls="tab-terms" id="t-terms">Terms</button>
+            <button role="tab" aria-selected="false" aria-controls="tab-bids" id="t-bids">Bid History</button>
+            <button role="tab" aria-selected="false" aria-controls="tab-faq" id="t-faq">FAQ</button>
+          </div>
+
+          <div class="tab-panel" id="tab-overview" role="tabpanel">
+            <h3>Highlights</h3>
+            <ul data-l-highlights></ul>
+          </div>
+
+          <div class="tab-panel" id="tab-specs" role="tabpanel" hidden>
+            <div class="specs-grid" data-l-specs></div>
+          </div>
+
+          <div class="tab-panel" id="tab-diligence" role="tabpanel" hidden>
+            <h3>Pre-bid due diligence package</h3>
+            <p class="muted">All documents available after registration. Items marked <strong>required</strong> must be e-signed before paddle activation.</p>
+            <ul class="due-diligence-list">
+              <li><div class="file"><div class="ico-doc">PDF</div> Property Information Package <span class="tag">Required</span></div><span class="sz">42 pp · 8.4 MB</span></li>
+              <li><div class="file"><div class="ico-doc">PDF</div> Title Commitment</div><span class="sz">14 pp · 2.1 MB</span></li>
+              <li><div class="file"><div class="ico-doc">PDF</div> Survey &amp; Plat</div><span class="sz">3 pp · 6.0 MB</span></li>
+              <li><div class="file"><div class="ico-doc">PDF</div> Inspection Report</div><span class="sz">86 pp · 14.2 MB</span></li>
+              <li><div class="file"><div class="ico-doc">DOC</div> Purchase &amp; Sale Agreement <span class="tag">Required</span></div><span class="sz">22 pp</span></li>
+              <li><div class="file"><div class="ico-doc">PDF</div> Auction T&amp;C <span class="tag">Required</span></div><span class="sz">8 pp</span></li>
+              <li><div class="file"><div class="ico-doc">3D</div> Matterport Virtual Tour</div><span class="sz">Interactive</span></li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-terms" role="tabpanel" hidden>
+            <h3>Auction terms</h3>
+            <ul>
+              <li><strong>Sale method:</strong> Online-only, time-definite auction.</li>
+              <li><strong>Buyer's premium:</strong> 10% added to high bid.</li>
+              <li><strong>Earnest money:</strong> $50,000 wired within 24 hours of hammer.</li>
+              <li><strong>Closing:</strong> 30 days from contract execution.</li>
+              <li><strong>Soft close:</strong> Bids in the final 5 minutes extend the close by 5 minutes.</li>
+              <li><strong>Proof of funds:</strong> Required before paddle activation.</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-bids" role="tabpanel" hidden>
+            <h3>Recent bid activity</h3>
+            <p class="muted">Other bidder identities and paddle numbers are anonymized. You see only your own paddle.</p>
+            <table class="table" style="width:100%; border-collapse:collapse;">
+              <thead><tr style="text-align:left; border-bottom:1px solid var(--line);"><th style="padding:8px 0">Time</th><th>Paddle</th><th>Bid</th><th>Channel</th></tr></thead>
+              <tbody data-l-history class="mono"></tbody>
+            </table>
+          </div>
+
+          <div class="tab-panel" id="tab-faq" role="tabpanel" hidden>
+            <h3>Frequently asked — for this property</h3>
+            <div class="faq-list">
+              <details class="faq-item"><summary>Is this property selling with a reserve price?</summary><div class="faq-body">Check the "Auction Terms" tab. Absolute lots show "Absolute" in the badges.</div></details>
+              <details class="faq-item"><summary>Can I inspect the property before bidding?</summary><div class="faq-body">Yes. Open inspection days are listed in the Property Information Package.</div></details>
+              <details class="faq-item"><summary>What happens if my financing falls through?</summary><div class="faq-body">All Cates auction sales are non-contingent. Pre-approved financing or proof of funds is required.</div></details>
+              <details class="faq-item"><summary>How does the soft close work?</summary><div class="faq-body">Bids in the final five minutes extend the close by another five.</div></details>
+              <p style="margin-top:1rem"><a href="faq.html" class="btn btn--ghost btn--sm">All Cates FAQ →</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="between" style="align-items:center">
+            <div style="display:flex; gap:1rem; align-items:center">
+              <div style="width:64px; height:64px; border-radius:50%; background: linear-gradient(135deg, var(--gold-2), var(--burgundy)); color:white; display:grid; place-items:center; font-family:var(--serif); font-size:1.5rem; font-weight:600">CC</div>
+              <div>
+                <div style="font-weight:600; font-size:1.1rem">Carter Cates</div>
+                <div class="muted" style="font-size:.85rem">Lead Auctioneer · Principal Broker</div>
+              </div>
+            </div>
+            <div class="cluster">
+              <a href="tel:18005552837" class="btn btn--ghost btn--sm">Call</a>
+              <a href="#" class="btn btn--gold btn--sm">Message</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="bid-box" data-bid-box></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div data-chrome-foot></div>
+<script src="js/cates-engine.js"></script>
+<script src="js/cates-render.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

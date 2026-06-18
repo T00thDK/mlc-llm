@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>War Room — Cates Auctioneer Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="dark">
+
+<div data-chrome-head></div>
+
+<div class="war-shell">
+  <div class="container">
+    <div class="between mb-3" style="align-items:flex-end; flex-wrap:wrap; gap:1rem">
+      <div>
+        <span class="eyebrow" style="color:var(--gold-2)">Auctioneer · Operator Console</span>
+        <h1 style="margin:.35rem 0 .25rem; color:white">War Room</h1>
+        <div class="muted" style="color:rgba(255,255,255,.6); font-size:.92rem">Live cross-engine view of every bidder, paddle, and lot — driven by the same engine bidders see.</div>
+      </div>
+      <div class="cluster">
+        <span class="tag tag--live"><span class="live-dot" style="background:white"></span> ON AIR</span>
+        <button class="btn btn--ghost-light btn--sm">📞 Phone bid</button>
+        <button class="btn btn--ghost-light btn--sm">⚙️ Settings</button>
+      </div>
+    </div>
+
+    <div class="war-grid">
+      <section class="war-stage" data-war-stage>
+        <div class="stage-h">
+          <div>
+            <div class="lot mono" data-war-lot>LOT — · NOW</div>
+            <h2 data-war-title>—</h2>
+            <div class="muted" style="color:rgba(255,255,255,.6)" data-war-loc>—</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted" style="color:rgba(255,255,255,.6); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase">Closes in</div>
+            <div class="clock-xl" data-war-end data-end="" data-variant="compact">—</div>
+            <div class="muted" style="color:rgba(255,255,255,.6); font-size:.78rem">Soft close · 5min</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; align-items:end">
+          <div>
+            <div class="muted" style="color:rgba(255,255,255,.6); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase">Current Bid</div>
+            <div class="now-bid" data-war-bid>$0</div>
+            <div class="muted" style="color:rgba(255,255,255,.6)" data-war-leader>—</div>
+          </div>
+          <div>
+            <div class="muted" style="color:rgba(255,255,255,.6); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase">Next Required</div>
+            <div class="now-bid" data-war-next style="color:var(--gold-2); font-size: 2.2rem">$0</div>
+          </div>
+        </div>
+
+        <div class="ask">
+          <button data-war-ask="ask">$1,215K — fair warning?</button>
+          <button data-war-ask="once">Once</button>
+          <button data-war-ask="twice">Twice</button>
+          <button class="fair" data-war-ask="fair">FAIR WARNING</button>
+          <button class="hammer" data-war-ask="hammer">SOLD! ⚒</button>
+          <button data-war-ask="pause">Pause</button>
+        </div>
+
+        <div>
+          <div class="between mb-2" style="margin-bottom:.5rem"><h3 style="margin:0">Live bid feed</h3><span class="muted" style="font-size:.78rem">Real-time across web · iOS · Android · phone</span></div>
+          <div class="bid-feed" data-war-feed></div>
+        </div>
+      </section>
+
+      <section class="war-card">
+        <div class="head"><h3>Active bidders</h3><span class="live-tag"><span class="dot"></span> LIVE</span></div>
+        <div class="muted" style="font-size:.78rem; color:rgba(255,255,255,.55)">Identities visible to staff only. Bidders see only their own paddle.</div>
+        <ul class="bidder-list" data-war-bidders></ul>
+        <div class="cluster" style="margin-top:auto">
+          <button class="btn btn--ghost-light btn--sm" style="flex:1">Message</button>
+          <button class="btn btn--ghost-light btn--sm" style="flex:1">Suspend</button>
+        </div>
+      </section>
+
+      <section class="war-card">
+        <div class="head"><h3>Listing team &amp; broadcast</h3></div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.65rem">
+          <li style="display:flex; gap:.6rem; align-items:center">
+            <div style="width:36px; height:36px; border-radius:50%; background: linear-gradient(135deg,var(--gold-2),var(--burgundy)); color:white; display:grid; place-items:center; font-weight:600; font-size:.85rem">CC</div>
+            <div style="flex:1"><div style="color:white; font-size:.9rem; font-weight:600">Carter Cates</div><div class="muted" style="color:rgba(255,255,255,.55); font-size:.75rem">Lead auctioneer</div></div>
+            <button class="btn btn--ghost-light btn--sm">📞</button>
+          </li>
+          <li style="display:flex; gap:.6rem; align-items:center">
+            <div style="width:36px; height:36px; border-radius:50%; background: linear-gradient(135deg,var(--teal),#4cb1aa); color:white; display:grid; place-items:center; font-weight:600; font-size:.85rem">JC</div>
+            <div style="flex:1"><div style="color:white; font-size:.9rem; font-weight:600">Jordan Cates</div><div class="muted" style="color:rgba(255,255,255,.55); font-size:.75rem">CRO · ring man</div></div>
+            <button class="btn btn--ghost-light btn--sm">📞</button>
+          </li>
+          <li style="display:flex; gap:.6rem; align-items:center">
+            <div style="width:36px; height:36px; border-radius:50%; background:#3a3a52; color:white; display:grid; place-items:center; font-weight:600; font-size:.85rem">RC</div>
+            <div style="flex:1"><div style="color:white; font-size:.9rem; font-weight:600">R. Cates III</div><div class="muted" style="color:rgba(255,255,255,.55); font-size:.75rem">Phone clerk</div></div>
+            <button class="btn btn--ghost-light btn--sm">📞</button>
+          </li>
+        </ul>
+
+        <div style="border-top:1px solid rgba(255,255,255,.08); padding-top:1rem">
+          <h3 style="margin-bottom:.5rem">Broadcast to all bidders</h3>
+          <textarea data-war-msg placeholder="Type a message to all online bidders…" rows="2" style="width:100%; background:rgba(255,255,255,.05); color:white; border:1px solid rgba(255,255,255,.12); border-radius:6px; padding:8px; font-family:inherit; font-size:.85rem"></textarea>
+          <div class="cluster" style="margin-top:.5rem; justify-content:space-between">
+            <span class="muted" style="font-size:.72rem; color:rgba(255,255,255,.55)">Delivers as a notification to every active bidder.</span>
+            <button class="btn btn--gold btn--sm" data-war-send>Send</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="war-card" style="grid-column: 2 / -1">
+        <div class="head"><h3>Lot queue</h3><a href="#" class="muted" style="font-size:.78rem; color:rgba(255,255,255,.6)">Reorder</a></div>
+        <div data-war-queue style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap:.5rem; max-height: 220px; overflow-y:auto"></div>
+      </section>
+
+      <section class="war-card">
+        <div class="head"><h3>Audience</h3></div>
+        <div class="kpi-grid" style="grid-template-columns:1fr 1fr; gap:.65rem">
+          <div class="kpi" style="background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.08)"><span class="k" style="color:rgba(255,255,255,.6)">Online now</span><span class="v" style="color:white">2,847</span></div>
+          <div class="kpi" style="background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.08)"><span class="k" style="color:rgba(255,255,255,.6)">Verified</span><span class="v" style="color:var(--gold-2)">312</span></div>
+          <div class="kpi" style="background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.08)"><span class="k" style="color:rgba(255,255,255,.6)">Cohort</span><span class="v" style="color:white">88% LAA</span></div>
+          <div class="kpi" style="background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.08)"><span class="k" style="color:rgba(255,255,255,.6)">Avg Income</span><span class="v" style="color:white">$840K</span></div>
+        </div>
+        <h4 style="font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-top:.5rem">Top sources</h4>
+        <ul style="list-style:none; padding:0; margin:0; font-size:.85rem; color:white">
+          <li style="display:flex; justify-content:space-between; padding:4px 0">Email cohort A · <span class="mono" style="color:var(--gold-2)">38%</span></li>
+          <li style="display:flex; justify-content:space-between; padding:4px 0">Programmatic LAA · <span class="mono" style="color:var(--gold-2)">21%</span></li>
+          <li style="display:flex; justify-content:space-between; padding:4px 0">Concierge referral · <span class="mono" style="color:var(--gold-2)">14%</span></li>
+          <li style="display:flex; justify-content:space-between; padding:4px 0">Organic search · <span class="mono" style="color:var(--gold-2)">11%</span></li>
+          <li style="display:flex; justify-content:space-between; padding:4px 0">Direct · <span class="mono" style="color:var(--gold-2)">9%</span></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div data-chrome-foot></div>
+<script src="js/cates-engine.js"></script>
+<script src="js/cates-render.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

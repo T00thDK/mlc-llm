@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Auctions &amp; Listings — Cates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div data-chrome-head></div>
+
+<section class="section section--tight" style="background: var(--surface)">
+  <div class="container">
+    <span class="eyebrow">All listings · Two engines, one grid</span>
+    <h1 style="margin: .35rem 0 .5rem; font-size: 2.5rem">Auctions &amp; Properties</h1>
+    <div class="muted">Searchable, filterable, sortable. Online auctions and traditional listings together — with parity of detail.</div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="filter-bar mb-3" data-listing-filter>
+      <div class="group">
+        <button class="chip" data-filter="sale" data-val="all" aria-pressed="true">All sales</button>
+        <button class="chip" data-filter="sale" data-val="auction" aria-pressed="false">Auctions only</button>
+        <button class="chip" data-filter="sale" data-val="traditional" aria-pressed="false">Traditional only</button>
+      </div>
+      <div class="group">
+        <button class="chip" data-filter="type" data-val="all" aria-pressed="true">All assets</button>
+        <button class="chip" data-filter="type" data-val="residential" aria-pressed="false">Residential</button>
+        <button class="chip" data-filter="type" data-val="land" aria-pressed="false">Land</button>
+        <button class="chip" data-filter="type" data-val="luxury" aria-pressed="false">Luxury</button>
+        <button class="chip" data-filter="type" data-val="commercial" aria-pressed="false">Commercial</button>
+        <button class="chip" data-filter="type" data-val="estate" aria-pressed="false">Estate</button>
+      </div>
+      <label class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" placeholder="Search address, lot, keyword…">
+      </label>
+      <div class="right-tools">
+        <select aria-label="Sort">
+          <option>Closing soonest</option>
+          <option>Most activity</option>
+          <option>Price: high → low</option>
+          <option>Price: low → high</option>
+          <option>New to market</option>
+          <option>Largest acreage</option>
+        </select>
+        <div class="view-toggle">
+          <button data-view="grid" aria-pressed="true" aria-label="Grid">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </button>
+          <button data-view="list" aria-pressed="false" aria-label="List">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="muted mb-3" style="font-size:.9rem"><span data-result-count>—</span> properties &amp; auctions</div>
+
+    <div class="listing-grid" data-listing-grid></div>
+  </div>
+</section>
+
+<div data-chrome-foot></div>
+<script src="js/cates-engine.js"></script>
+<script src="js/cates-render.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
